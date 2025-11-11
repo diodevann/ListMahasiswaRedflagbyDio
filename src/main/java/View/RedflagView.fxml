@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="Controller.RedflagViewController" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      alignment="CENTER" spacing="10.0" 
+      prefHeight="500.0" prefWidth="650.0">
+
+    <GridPane hgap="10.0" vgap="10.0" maxWidth="600">
+        <Label text="NIM:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="inputNIM" promptText="Input NIM" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        
+        <Label text="Nama:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="inputNama" promptText="Input Nama" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+        <Label text="Zodiak:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="inputZodiak" promptText="Pilih Zodiak" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Label text="Tanggal Entri:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <DatePicker fx:id="inputTanggal" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    </GridPane>
+    
+    <HBox alignment="CENTER" spacing="15.0">
+        <Button text="Add (Create)" onAction="#handleAdd"/>
+        <Button text="Edit (Update)" onAction="#handleEdit"/>
+        <Button text="Delete (Delete)" onAction="#handleDelete"/>
+    </HBox>
+    
+    <TableView fx:id="tabelData" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="kolomNIM" text="NIM" prefWidth="100"/>
+            <TableColumn fx:id="kolomNama" text="Nama" prefWidth="200"/>
+            <TableColumn fx:id="kolomZodiak" text="Zodiak" prefWidth="100"/>
+            <TableColumn fx:id="kolomTanggal" text="Tgl. Entri" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
